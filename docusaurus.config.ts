@@ -26,7 +26,7 @@ const config: Config = {
   organizationName: 'minecraftpluginwiki', // Usually your GitHub org/user name.
   projectName: 'wikipage', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   trailingSlash: false,
 
