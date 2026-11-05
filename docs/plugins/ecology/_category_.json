@@ -1,0 +1,10 @@
+{
+  "label": "経済系プラグイン",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "title": "経済系プラグイン",
+    "description": "経済系のプラグイン",
+    "slug": "/plugins/ecology"
+  }
+}

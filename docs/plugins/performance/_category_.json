@@ -1,0 +1,10 @@
+{
+  "label": "パフォーマンス",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "title": "パフォーマンス",
+    "description": "軽量化などのパフォーマンスに影響するプラグイン",
+    "slug": "/plugins/performance"
+  }
+}

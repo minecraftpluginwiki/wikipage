@@ -1,0 +1,10 @@
+{
+  "label": "ゲーム",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "ゲーム追加プラグイン",
+    "description": "新しいゲームを追加するプラグイン",
+    "slug": "/plugins/game"
+  }
+}
