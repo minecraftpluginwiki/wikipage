@@ -1,0 +1,60 @@
+name: PR Build Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Docusaurus
+        id: build
+        run: |
+          # パイプ実行時でもビルドエラーを検知できるよう pipefail を設定
+          set -o pipefail
+          # ビルドを実行し、画面に出力しつつ build.log に保存
+          npm run build 2>&1 | tee build.log
+
+      - name: Post Failure Comment on PR
+        # ビルドステップが失敗した場合のみ実行
+        if: failure() && steps.build.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # ログの末尾80行（エラーメッセージとスタックトレース部分）を抽出
+          ERROR_LOG=$(tail -n 80 build.log)
+
+          # コメント本文を作成
+          cat << 'EOF' > comment.md
+          ビルドチェックの結果、下記のエラーがありました。
+
+          ```text
+          EOF
+
+          echo "$ERROR_LOG" >> comment.md
+
+          cat << 'EOF' >> comment.md
+          ```
+          EOF
+
+          # GitHub CLI を使用して PR にコメントを投稿
+          gh pr comment ${{ github.event.pull_request.number }} --body-file comment.md
