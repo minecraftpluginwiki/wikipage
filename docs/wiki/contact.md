@@ -13,7 +13,7 @@ GitHubのIssueでお知らせください。
 ## それ以外
 
 Twitter(現X)にて [やまがみ(@yamagami2211_02)](https://x.com/yamagami2211_02) へDMするか、  
-メールアドレス mail @ yama2211.jp へメールをお送りください。  
+メールアドレス admin [at] mcpluginswiki.xyz へメールをお送りください。  
 確認の上 **返信が必要と判断した** メールへ返信します。
 
 メールを送る際は、内容識別のために 件名もしくは本文内に「Minecraft Plugins Wikiの件」などの文言を入れて送るようお願いします。  

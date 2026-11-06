@@ -1,7 +1,7 @@
 ---
 title: EssentialsX
 description: サーバー運営に必要な基本コマンド・テレポート・経済機能を提供する定番総合管理プラグイン
-tags: [EssentialsX, EssentialsX Team, "Spigot, Paper", 管理者向け]
+tags: [EssentialsX, EssentialsX Team, 管理者向け]
 ---
 
 # EssentialsX

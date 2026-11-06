@@ -15,6 +15,14 @@ const config: Config = {
     faster: false,
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  clientModules: [
+    require.resolve('./src/client-modules/fix-mermaid.js'),
+  ],
+
   // Set the production url of your site here
   url: 'https://mcpluginswiki.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -124,9 +132,13 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'forest'},
+    },
   } satisfies Preset.ThemeConfig,
 
   themes: [
+    '@docusaurus/theme-mermaid',
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
